@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>obmankabank</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <section id="screen-home" class="screen">
+            <header>
+                <h1>obmankabank</h1>
+                <p class="motto">доверяйте свои деньги нам:)</p>
+                <div class="total-card">
+                    <span>Общий баланс</span>
+                    <h2 id="total-amount">0.00 ₽</h2>
+                </div>
+            </header>
+
+            <div id="accounts-container">
+                </div>
+
+            <button class="fab" onclick="showScreen('screen-add')">+</button>
+        </section>
+
+        <section id="screen-add" class="screen hidden">
+            <nav class="top-nav">
+                <button onclick="showScreen('screen-home')">← Отмена</button>
+            </nav>
+            <div class="content">
+                <h2>Открыть счет</h2>
+                <label>Выберите банк</label>
+                <select id="new-account-bank">
+                    <option value="Сбербанк">Сбербанк</option>
+                    <option value="Альфа-банк">Альфа-банк</option>
+                    <option value="Т-банк">Т-банк</option>
+                </select>
+                <p class="hint">Номер (20 знаков) будет создан автоматически</p>
+                <button class="btn-main" onclick="addNewAccount()">Создать</button>
+            </div>
+        </section>
+
+        <section id="screen-details" class="screen hidden">
+            <nav class="top-nav">
+                <button onclick="showScreen('screen-home')">← На главную</button>
+            </nav>
+            <div id="selected-account-view" class="content">
+                </div>
+        </section>
+
+        <section id="screen-transfer" class="screen hidden">
+            <nav class="top-nav">
+                <button onclick="showScreen('screen-details')">← Назад</button>
+            </nav>
+            <div class="content">
+                <h2>Перевод</h2>
+                <input type="text" placeholder="Номер счета (20 знаков)" maxlength="20">
+                <input type="number" id="transfer-amount" placeholder="Сумма  (₽)" min="0">
+                <button class="btn-main" onclick="processTransaction('transfer')">Отправить</button>
+            </div>
+        </section>
+
+        <section id="screen-topup" class="screen hidden">
+            <nav class="top-nav">
+                <button onclick="showScreen('screen-details')">← Назад</button>
+            </nav>
+            <div class="content">
+                <h2>Пополнение</h2>
+                <label>Списать со счета:</label>
+                <select id="topup-source"></select>
+                <input type="number" id="topup-amount" placeholder="Сумма (₽)" min="0">
+                <button class="btn-main" onclick="processTransaction('topup')">Подтвердить</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+:root {
+    --black: #000000;
+    --dark-grey: #121212;
+    --card-grey: #1e1e1e;
+    --blue: #007aff;
+    --green: #34c759;
+    --white: #ffffff;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.hidden { display: none !important; }
+
+#app {
+max-width: 500px;
+margin: 0 auto;
+min-height: 100vh;
+padding: 20px;
+position: relative;
+}
+
+header h1 { font-size: 28px; margin-bottom: 4px; color: var(--blue); }
+.motto { color: #888; font-style: italic; font-size: 14px; margin-bottom: 24px; }
+
+.total-card {
+    background: linear-gradient(135deg, #007aff, #0051a8);
+    padding: 24px;
+    border-radius: 20px;
+    margin-bottom: 32px;
+}
+
+.account-tile {
+    background: var(--card-grey);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #2c2c2c;
+}
+
+.fab {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--green);
+    border: none;
+    color: white;
+    font-size: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.top-nav button {
+    background: none;
+    border: none;
+    color: var(--blue);
+    font-size: 16px;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.btn-main {
+    width: 100%;
+    background: var(--green);
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.btn-action {
+    background: var(--blue);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin: 5px;
+    flex: 1;
+}
+
+input, select {
+    width: 100%;
+    background: var(--card-grey);
+    border: 1px solid #333;
+    color: white;
+    padding: 16px;
+    border-radius: 12px;
+    margin: 10px 0;
+}
+
+.hint { font-size: 12px; color: #666; }
