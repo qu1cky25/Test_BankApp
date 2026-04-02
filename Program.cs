@@ -80,14 +80,14 @@ void print_database_state(ApplicationContext db_context)
 {
     Console.Clear();
     Console.WriteLine("--- ТАБЛИЦА СЧЕТА (В базе всего) ---");
-    Console.WriteLine("Номер счета          | Банк       | Баланс  | Видим?");
+    Console.WriteLine("Номер счета          | Банк       | Баланс");
     Console.WriteLine("----------------------------------------------------");
 
     var all_accounts = db_context.Accounts.ToList();
     foreach (var acc in all_accounts)
     {
         string visibility = acc.is_visible ? "ДА" : "НЕТ";
-        Console.WriteLine($"{acc.Id} | {acc.Bank,-10} | {acc.Balance,8:F2} | {visibility}");
+        Console.WriteLine($"{acc.Id} | {acc.Bank,-10} | {acc.Balance,8:F2}");
     }
 
     Console.WriteLine("\n--- ТАБЛИЦА ТРАНЗАКЦИИ ---");
